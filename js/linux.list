@@ -1,16 +1,14 @@
-# NAME: linux Direct Connection
-# AUTHOR: John Doe
-# UPDATED: 2024-08-28
-# HOST: 1
-# HOST-SUFFIX: 1
-# USER-AGENT: 1
-# TOTAL: 3
+# Direct rules for specific domains in Loon
 
-# Direct connection for specific linux.do subdomains
-HOST,subdomain.linux.do,DIRECT
-
-# Direct connection for all linux.do domains
-HOST-SUFFIX,linux.do,DIRECT
-
-# Direct connection for any User-Agent related to linux app
-USER-AGENT,*linux,DIRECT
+DOMAIN-SUFFIX,linux.do,DIRECT
+DOMAIN-SUFFIX,nav.linux.do,DIRECT
+DOMAIN-SUFFIX,shared.oaifree.com,DIRECT
+DOMAIN-SUFFIX,connect.linux.do,DIRECT
+DOMAIN-SUFFIX,api.oaipro.com,DIRECT
+DOMAIN-SUFFIX,new.oaifree.com,DIRECT
+DOMAIN-SUFFIX,tls.http.rw,DIRECT
+DOMAIN-SUFFIX,iconce.com,DIRECT
+DOMAIN-SUFFIX,www.google-analytics.com,DIRECT
+DOMAIN-SUFFIX,img.shields.io,DIRECT
+DOMAIN-SUFFIX,linux-do-card.0x1.site,DIRECT
+DOMAIN-SUFFIX,readme-typing-svg.demolab.com,DIRECT

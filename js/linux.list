@@ -1,0 +1,8 @@
+# NAME: Linux.do Direct Connection
+# AUTHOR: John Doe
+# UPDATED: 2024-08-28
+# HOST-SUFFIX: 1
+# TOTAL: 1
+
+# Direct connection for all linux.do domains
+HOST-SUFFIX,linux.do,DIRECT

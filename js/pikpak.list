@@ -1,9 +1,16 @@
 # NAME: PikPak Direct Connection
-# AUTHOR: YourName
-# DESCRIPTION: Direct connection for all domains related to mypikpak.com
+# AUTHOR: John Doe
 # UPDATED: 2024-08-28
+# HOST: 1
 # HOST-SUFFIX: 1
-# TOTAL: 1
+# USER-AGENT: 1
+# TOTAL: 3
+
+# Direct connection for specific mypikpak.com subdomains
+HOST,subdomain.mypikpak.com,DIRECT
 
 # Direct connection for all mypikpak.com domains
 HOST-SUFFIX,mypikpak.com,DIRECT
+
+# Direct connection for any User-Agent related to PikPak app
+USER-AGENT,PikPak*,DIRECT

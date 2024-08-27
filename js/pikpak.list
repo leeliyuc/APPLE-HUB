@@ -1,16 +1,42 @@
-# NAME: PikPak Direct Connection
-# AUTHOR: John Doe
-# UPDATED: 2024-08-28
-# HOST: 1
-# HOST-SUFFIX: 1
-# USER-AGENT: 1
-# TOTAL: 3
-
-# Direct connection for specific mypikpak.com subdomains
-HOST,subdomain.mypikpak.com,DIRECT
-
-# Direct connection for all mypikpak.com domains
-HOST-SUFFIX,mypikpak.com,DIRECT
-
-# Direct connection for any User-Agent related to PikPak app
-USER-AGENT,PikPak*,DIRECT
+DOMAIN-SUFFIX,api-drive.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,access.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,user.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,config.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,static.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,sg-thumbnail-drive.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,rcv5-sp.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,idx.shub.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,hub5pr.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,hub.dcdn.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,rp.shub.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,hub5emu.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0858.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0859.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0860.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0861.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0862.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0863.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0864.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0865.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0866.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0867.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0868.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0869.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0870.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0871.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0872.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0873.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0874.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0875.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0876.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0877.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0878.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0879.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0880.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0881.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0882.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0883.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0884.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0885.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0886.mypikpak.com,DIRECT
+DOMAIN-SUFFIX,dl-a10b-0887.mypikpak.com,DIRECT

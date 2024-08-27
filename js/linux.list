@@ -1,12 +1,16 @@
-# NAME: Linux.do Direct Connection
+# NAME: linux Direct Connection
 # AUTHOR: John Doe
 # UPDATED: 2024-08-28
 # HOST: 1
 # HOST-SUFFIX: 1
-# TOTAL: 2
+# USER-AGENT: 1
+# TOTAL: 3
 
 # Direct connection for specific linux.do subdomains
 HOST,subdomain.linux.do,DIRECT
 
 # Direct connection for all linux.do domains
 HOST-SUFFIX,linux.do,DIRECT
+
+# Direct connection for any User-Agent related to linux app
+USER-AGENT,linux*,DIRECT

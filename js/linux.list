@@ -13,4 +13,4 @@ HOST,subdomain.linux.do,DIRECT
 HOST-SUFFIX,linux.do,DIRECT
 
 # Direct connection for any User-Agent related to linux app
-USER-AGENT,linux.do*,DIRECT
+USER-AGENT,*linux,DIRECT

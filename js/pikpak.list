@@ -1,0 +1,9 @@
+# NAME: PikPak Direct Connection
+# AUTHOR: YourName
+# DESCRIPTION: Direct connection for all domains related to mypikpak.com
+# UPDATED: 2024-08-28
+# HOST-SUFFIX: 1
+# TOTAL: 1
+
+# Direct connection for all mypikpak.com domains
+HOST-SUFFIX,mypikpak.com,DIRECT

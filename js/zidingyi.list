@@ -1,12 +1,18 @@
-DOMAIN-SUFFIX,zmios.top,DIRECT
-DOMAIN-SUFFIX,xiaoya.zmios.top,DIRECT
-DOMAIN-SUFFIX,wechat.zmios.top,DIRECT
-DOMAIN-SUFFIX,www.cccz.online,DIRECT
-DOMAIN-SUFFIX,cccz.online,DIRECT
-DOMAIN-SUFFIX,bbs.cccz.online,DIRECT
-DOMAIN-SUFFIX,api.cccz.online,DIRECT
-DOMAIN-SUFFIX,www.iospay.online,DIRECT
-DOMAIN-SUFFIX,iospay.online,DIRECT
-DOMAIN-SUFFIX,pan.iosipa.online,DIRECT
-IP-CIDR,193.43.72.169/32,DIRECT
-IP-CIDR,175.24.174.218/32,DIRECT
+# NAME: Custom Direct Rules
+# AUTHOR: 白鸭
+# UPDATED: 2024-08-28
+# HOST-SUFFIX: 10
+# IP-CIDR: 2
+# TOTAL: 12
+
+# 域名后缀匹配规则
+HOST-SUFFIX,zmios.top,DIRECT
+HOST-SUFFIX,xiaoya.zmios.top,DIRECT
+HOST-SUFFIX,wechat.zmios.top,DIRECT
+HOST-SUFFIX,www.cccz.online,DIRECT
+HOST-SUFFIX,cccz.online,DIRECT
+HOST-SUFFIX,bbs.cccz.online,DIRECT
+HOST-SUFFIX,api.cccz.online,DIRECT
+HOST-SUFFIX,www.iospay.online,DIRECT
+HOST-SUFFIX,iospay.online,DIRECT
+HOST-SUFFIX,pan.iosipa.online,DIRECT

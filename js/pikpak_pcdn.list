@@ -1,0 +1,14 @@
+# Pikpak Domains
+DOMAIN-SUFFIX,mypikpak.com,REJECT
+DOMAIN-SUFFIX,shub.mypikpak.com,REJECT
+DOMAIN-SUFFIX,dcdn.mypikpak.com,REJECT
+
+# Pikpak 加速域名规则
+IP-CIDR,104.17.217.76/32,PROXY
+IP-CIDR,172.67.73.30/32,PROXY
+
+# Additional rules for specific Pikpak PCDN domains
+DOMAIN-KEYWORD,hub5pr,REJECT
+DOMAIN-KEYWORD,hub.dcdn,REJECT
+DOMAIN-KEYWORD,rp.shub,REJECT
+DOMAIN-KEYWORD,hub5emu,REJECT

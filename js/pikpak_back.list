@@ -1,0 +1,6 @@
+# DOMAIN 规则，匹配所有 mypikpak.com 的域名
+DOMAIN-SUFFIX,mypikpak.com,DIRECT
+DOMAIN-SUFFIX,mypikpak.net,DIRECT
+
+# URL 重写规则，将所有 .com 请求重定向到 .net
+URL-REGEX,^https?://([a-zA-Z0-9.-]+)\.mypikpak\.com(.*),https://$1.mypikpak.net$2,DIRECT

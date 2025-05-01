@@ -11,8 +11,17 @@ function checkCacheValid() {
     }  
 }
 
+// 自动设置语言为中文
+function setLanguageToChinese() {
+    const userLang = navigator.language || navigator.userLanguage;
+    if (!userLang.startsWith('zh')) {
+        document.documentElement.lang = 'zh-CN';
+    }
+}
+
 // 合并后的DOMContentLoaded事件
 document.addEventListener("DOMContentLoaded", function() {  
+    setLanguageToChinese();
     if (!checkCacheValid()) {  
         promptPassword("success", "请输入验证码以继续访问");  
     }  

@@ -1,7 +1,7 @@
-const CACHE_EXPIRY = 12 * 60 * 60 * 1000; // 12灏忔椂缂撳瓨  
+const CACHE_EXPIRY = 12 * 60 * 60 * 1000; // 12小时缓存
 const VERIFY_API = 'https://verify.ioska.cn/verify';
 
-// 缂撳瓨楠岃瘉鍑芥暟 (淇鐗�)  
+// 缓存校验函数（修正版）
 function checkCacheValid() {  
     try {  
         const cache = JSON.parse(localStorage.getItem('captchaValidation') || '{}');  
@@ -11,14 +11,14 @@ function checkCacheValid() {
     }  
 }
 
-// 鍚堝苟鍚庣殑DOMContentLoaded浜嬩欢  
+// 合并后的DOMContentLoaded事件
 document.addEventListener("DOMContentLoaded", function() {  
     if (!checkCacheValid()) {  
-        promptPassword("success", "璇疯緭鍏ラ獙璇佺爜浠ョ户缁闂�");  
+        promptPassword("success", "请输入验证码以继续访问");  
     }  
 });
 
-// 缁熶竴楠岃瘉鍑芥暟 (澧炲己閿欒澶勭悊)  
+// 统一校验函数（增加错误处理）
 function validateCaptcha(captcha) {  
     const xhr = new XMLHttpRequest();  
     xhr.open("POST", VERIFY_API, true);  
@@ -27,7 +27,7 @@ function validateCaptcha(captcha) {
 
     xhr.onload = function() {  
         if (xhr.status !== 200) {  
-            handleError(`HTTP閿欒: ${xhr.status}`);  
+            handleError(`HTTP错误: ${xhr.status}`);  
             return;  
         }
 
@@ -40,40 +40,40 @@ function validateCaptcha(captcha) {
                 }));  
                 welcomeUser();  
             } else {  
-                handleError(response.msg || "楠岃瘉鐮侀敊璇�");  
+                handleError(response.msg || "验证码错误");  
             }  
         } catch (e) {  
-            handleError("鍝嶅簲瑙ｆ瀽澶辫触");  
+            handleError("响应解析失败");  
         }  
     };
 
-    xhr.onerror = () => handleError("缃戠粶杩炴帴澶辫触");  
-    xhr.ontimeout = () => handleError("璇锋眰瓒呮椂");  
+    xhr.onerror = () => handleError("网络连接失败");  
+    xhr.ontimeout = () => handleError("请求超时");  
     xhr.send(JSON.stringify({ code: captcha }));  
 }
 
-// 閿欒澶勭悊缁熶竴鏂规硶  
+// 错误处理统一方法
 function handleError(msg) {  
-    swal("閿欒", msg, "error").then(() => {  
-        promptPassword("error", "璇烽噸鏂拌緭鍏ラ獙璇佺爜");  
+    swal("错误", msg, "error").then(() => {  
+        promptPassword("error", "请重新输入验证码");  
     });  
 }
 
-// 澧炲己鐨勮緭鍏ラ獙璇佸脊绐�  
+// 增强的输入验证码弹窗
 function promptPassword(icon, title) {  
     swal({  
         title: title,  
-        text: "璇风‘璁ゆ偍宸茶幏鍙栨纭殑楠岃瘉鐮併€傝鐐瑰嚮涓嬫柟鎸夐挳鍏虫敞鎴戜滑鐨勫井淇″叕浼楀彿浠ヨ幏鍙栭獙璇佺爜銆�",  
+        text: "请确保您已获取正确的验证码。请点击下方按钮关注我们的微信公众号以获取验证码。",  
         closeOnClickOutside: false,  
         icon: icon,  
         buttons: {  
-            confirm: { text: "纭鎻愪氦", value: "confirm" },  
-            getCode: { text: "寰俊鍏紬鍙�", value: "get_code" }  
+            confirm: { text: "确认提交", value: "confirm" },  
+            getCode: { text: "微信公众号", value: "get_code" }  
         },  
         content: {  
             element: "input",  
             attributes: {  
-                placeholder: "璇疯緭鍏�6浣嶆暟瀛楅獙璇佺爜",  
+                placeholder: "请输入6位数字验证码",  
                 type: "number",  
                 pattern: "\\d{6}",  
                 maxlength: 6,  
@@ -81,45 +81,45 @@ function promptPassword(icon, title) {
             }  
         }  
     }).then(value => {  
-        if (value === null) { // 澶勭悊寮圭獥鍏抽棴  
-            promptPassword("warning", "璇峰畬鎴愰獙璇佷互缁х画璁块棶");  
+        if (value === null) { // 处理弹窗关闭  
+            promptPassword("warning", "请完成验证以继续访问");  
         } else if (value === "get_code") {  
             showWeChatCode();  
         } else if (!/^\d{6}$/.test(value)) {  
-            promptPassword("warning", "璇疯緭鍏�6浣嶆湁鏁堟暟瀛�");  
+            promptPassword("warning", "请输入6位有效数字");  
         } else {  
             validateCaptcha(value);  
         }  
     });  
 }
 
-// 寰俊鍏紬鍙峰脊绐楋紙淇濇寔鍘熷姛鑳斤級  
+// 微信公众号弹窗（保持原功能）
 function showWeChatCode() {  
     swal({  
-        title: "鍏虫敞寰俊鍏紬鍙疯幏鍙栭獙璇佺爜",  
-        text: "璇锋壂鎻忎互涓嬩簩缁寸爜鍏虫敞鎴戜滑鐨勫井淇″叕浼楀彿浠ヨ幏鍙栭獙璇佺爜銆�",  
+        title: "关注微信公众号获取验证码",  
+        text: "请扫描下方二维码关注我们的微信公众号以获取验证码。",  
         icon: "info",  
-        buttons: { confirm: { text: "杩斿洖杈撳叆", value: true } },  
+        buttons: { confirm: { text: "返回输入", value: true } },  
         content: {  
             element: "img",  
             attributes: {  
-                src: "https://www.ioska.cn/halo_IMG_0710.png",  
+                src: "https://baiyaczt-1314207616.cos.ap-shanghai.myqcloud.com/halo%2FIMG_0710.BMP",  
                 style: "width:100%;height:auto;border-radius:4px;"  
             }  
         }  
-    }).then(() => promptPassword("info", "璇疯緭鍏ラ獙璇佺爜"));  
+    }).then(() => promptPassword("info", "请输入验证码"));  
 }
 
-// 绠€鍖栫殑娆㈣繋鎻愮ず  
+// 简化的欢迎提示
 function welcomeUser() {  
-    swal({ title: "楠岃瘉鎴愬姛!", icon: "success", buttons: false, timer: 1000 });  
+    swal({ title: "验证成功!", icon: "success", buttons: false, timer: 1000 });  
 }
 
-// 鍩虹闃叉姢鎺柦锛堜繚鎸佸師鍔熻兘锛�  
+// 基础防护措施（保持原功能）
 window.addEventListener('contextmenu', e => e.preventDefault());  
 window.addEventListener('selectstart', e => e.preventDefault());  
 document.addEventListener('keydown', e => {  
     if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase()))) {  
         e.preventDefault();  
     }  
-});  
+});
